@@ -15,14 +15,20 @@ elif BMI < 24:
 else:
 	print('Your weight to hight, your need lose ', round(lose, 1),' KG, than you will be health.')
 
-target_BMI = input('Input your BMI target: ')
-target_weight = float(target_BMI)*((float(height)/100)**2)
-target_lose = float(weight)-(float(target_BMI)*((float(height)/100)**2))
-# print(target_lose)
+while True :
+	target_BMI = input('Input your BMI target: ')
+	target_weight = float(target_BMI)*((float(height)/100)**2)
+	target_lose = float(weight)-(float(target_BMI)*((float(height)/100)**2))
+	# print(target_lose)
 
-if target_lose > 0:
-	AM = str('-')
-else:
-	AM = str('+')
+	if target_lose > 0:
+		AM = str('-')
+	else:
+		AM = str('+')
 
-print('Your target weight will be', round(target_weight, 2), '. You should ', AM, round(target_lose, 2), 'KG your weight')
+	print('Your target weight will be', round(target_weight, 2), '. You should ', AM, abs(round(target_lose, 2)), 'KG your weight')
+	corq = input('input continue(c) or quite(q):')
+	if corq == 'q':
+		break
+	else:
+		continue
